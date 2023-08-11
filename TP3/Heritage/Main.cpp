@@ -15,5 +15,11 @@ int main(){
   std::cout << "m1.name : " << m1.getName() << std::endl;
   std::cout << "f1.name : " << f1.getName() << std::endl;
 
+  Mere *m = new Mere("Pointer Mere");
+  File *f = new File("Pointer File");
+
+  std::cout << m->afficher();
+  std::cout << f->afficher();
+
   return 0;
 }

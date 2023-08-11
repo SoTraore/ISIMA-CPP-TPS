@@ -24,3 +24,8 @@ int Mere::getCompteur() {
 std::string Mere::getName(){
   return this->nom;
 }
+
+std::string Mere::afficher(){
+  std::string out = "class Mere " + this->nom + "\n";
+  return out;
+}

@@ -12,6 +12,7 @@ class Mere {
     ~Mere();
     int getCompteur();
     std::string getName();
+    std::string afficher();
 };
 
 
