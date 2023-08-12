@@ -1,21 +1,22 @@
-SRC=producteur.cpp statisticien.cpp tests_catch.cpp main.cpp
-#SRC=$(wildcard *.cpp)  
-EXE=cpp3
+CC=g++
+CFLAGS=-c -Wall -Wextra -g
+LDFLAGS=-g -o
+OBJ=main.o producteur.o ProducteurPremiersEntier.o ProducteurAleatoire.o
 
-CXXFLAGS+=-Wall -Wextra -MMD -g -O2
-LDFLAGS= #-lSDL
+prog: $(OBJ)
+	$(CC) $(LDFLAGS) prog $(OBJ)
 
-OBJ=$(addprefix build/,$(SRC:.cpp=.o))
-DEP=$(addprefix build/,$(SRC:.cpp=.d))
+main.o: main.cpp ProducteurPremiersEntier.hpp
+	$(CC) $(CFLAGS) main.cpp
 
-all: $(OBJ)
-	$(CXX) -o $(EXE) $^ $(LDFLAGS)
+ProducteurPremiersEntier.o: ProducteurPremiersEntier.cpp ProducteurPremiersEntier.hpp producteur.hpp
+	$(CC) $(CFLAGS) ProducteurPremiersEntier.cpp
 
-build/%.o: %.cpp
-	@mkdir -p build
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
+ProducteurAleatoire.o: ProducteurAleatoire.cpp ProducteurAleatoire.hpp producteur.hpp
+	$(CC) $(CFLAGS) ProducteurAleatoire.cpp
+
+producteur.o: producteur.cpp producteur.hpp
+	$(CC) $(CFLAGS) producteur.cpp
 
 clean:
-	rm -rf build core *.gch
-
--include $(DEP)
+	rm -rf $(OBJ) prog

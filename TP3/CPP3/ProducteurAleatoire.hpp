@@ -3,6 +3,7 @@
 
 #include "producteur.hpp"
 #include <cstdlib>
+#include <fstream>
 
 class ProducteurAleatoire : public Producteur {
 public:

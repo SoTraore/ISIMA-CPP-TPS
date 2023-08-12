@@ -8,8 +8,10 @@ class Producteur {
   public:
     Producteur();
     int getTravail();
-    //virtual bool produire(int quantite, std::string nom) =0;
-    bool produire(int quantite, std::string nom);
+    void progressTravail();
+    virtual bool produire(int quantite, std::string nom) =0;
+    // Utilisez celui d'en bas avec les fiches de tests
+    //bool produire(int quantite, std::string nom);
 };
 
 #endif

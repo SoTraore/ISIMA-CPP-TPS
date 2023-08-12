@@ -1,0 +1,16 @@
+GG=g++ -c
+GO=g++ -o
+WAR=-Wall -Wextra -g
+OBJ=main.o statisticien.o
+
+prog : $(OBJ)
+	$(GO) prog $(OBJ)
+
+main.o : main.cpp statisticien.hpp
+	$(GG) main.cpp $(WAR)
+
+statisticien.o : statisticien.cpp statisticien.hpp
+	$(GG) statisticien.cpp $(WAR)
+
+clean :
+	rm -rf $(OBJ)

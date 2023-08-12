@@ -14,11 +14,12 @@ bool ProducteurAleatoire::produire(int quantite, std::string nom)
         fichier << quantite << std::endl;
         while (i<quantite) {
             fichier << std::rand()/((RAND_MAX + 1u)/100)
-                    << std::endl;
+                    << " ";
             ++i;
         }
+	fichier << std::endl;
         result= true;
-        travail++;
+	ProducteurAleatoire::Producteur::progressTravail();
     }
     fichier.close();
     return result;
