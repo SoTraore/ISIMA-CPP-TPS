@@ -6,6 +6,7 @@
 
 class Cercle {
   int x, y, h, w;
+  static int ordreC;
   public :
     Cercle() ;
     Cercle(int x, int y, int h, int w);

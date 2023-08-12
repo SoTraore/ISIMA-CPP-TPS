@@ -8,6 +8,7 @@ using namespace std;
 
 class Rectangle {
   int x, y, h, w;
+  static int ordreR;
   public :
     Rectangle();
     Rectangle(int x, int y, int h, int w);

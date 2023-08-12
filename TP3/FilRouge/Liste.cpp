@@ -14,6 +14,7 @@ Liste::~Liste() {
 
 std::string Liste::toString() {
   std::string output, c_Out, r_Out;
+  output = "Liste " + to_string(Liste::compteur) + "\n";
   c_Out = "Cercle : \n";
   r_Out = "Rectangle : \n";
 
@@ -25,7 +26,7 @@ std::string Liste::toString() {
   {
     r_Out += this->r[i].afficher() + "\n";
   }
-  output = c_Out+r_Out;
+  output += c_Out+r_Out;
   return output;
 }
 
