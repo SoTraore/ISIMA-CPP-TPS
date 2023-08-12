@@ -4,6 +4,8 @@
 #include "catch.hpp"
 #include "Rectangle.hpp"
 #include "Forme.hpp"
+#include "Cercle.hpp"
+
 // NOTE : ce test utilise des enum "class"
 // il faut donc utiliser un compilateur g++ >= 6.1
 // ou activer l'option c++11 du compilateur
@@ -92,3 +94,34 @@ TEST_CASE("BoiteEnglobante", "[Forme]") {
 	REQUIRE (f.getLargeur() == 0);
 	REQUIRE (f.getHauteur() == 0);
 }
+
+/*
+TEST_CASE("Cercle", "[Cercle]") {
+   int compteur = Forme::prochainId();
+   Cercle c1;
+   Cercle c2(...); 
+   
+   REQUIRE(c1.toString() == ".....");
+   REQUIRE(c2.toString() == ".....");
+
+   c2.setRayon(...);
+   REQUIRE(c2.getRayon()   == "..."  );
+   REQUIRE(c2.toString()   == ".....");
+   REQUIRE(c2.getLargeur() == ".....");
+   REQUIRE(c2.getHauteur() == ".....");  
+
+   REQUIRE(Forme::prochainId() == (compteur+2) ); 
+}
+
+TEST_CASE("Polymorphisme", "[Forme]") {
+   Forme * f1 = new Cercle;
+   Forme * f2 = new Rectangle;
+
+   REQUIRE(f1->toString() == ".....");
+   REQUIRE(f2->toString() == ".....");
+
+   delete f1;
+   delete f2;
+}
+
+*/
