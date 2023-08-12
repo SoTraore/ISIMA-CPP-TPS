@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <ostream>
+#include "Forme.hpp"
 
 using namespace std;
 
-class Rectangle {
+class Rectangle : public Forme {
   int x, y, h, w;
   static int ordreR;
   public :

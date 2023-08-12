@@ -17,38 +17,6 @@ Cercle::Cercle(int rx, int ry, int rayon)
 : x(rx-rayon), y(ry+rayon), h(2*rayon), w(2*rayon){
   this->ordreC += 1;
 }
-
-int Cercle::getX(){
-  return this->x;
-}
-
-int Cercle::getY(){
-  return this->y;
-}
-
-int Cercle::getLargeur(){
-  return this->w;
-}
-
-int Cercle::getHauteur(){
-  return this->h;
-}
-
-void Cercle::setX(int x){
-  this->x = x;
-}
-
-void Cercle::setY(int y){
-  this->y = y;
-}
-
-void Cercle::setLargeur(int w){
-  this->w = w;
-}
-
-void Cercle::setHauteur(int h){
-  this->h = h;
-}
     
 std::ostream& Cercle::toString(std::ostream& output) { 
   output << "x: " << this->x << ", y: " << this->y 
