@@ -1,4 +1,5 @@
 #include "Liste.hpp"
+#include "Forme.hpp"
 
 int main() {
   Rectangle R1 = Rectangle() ;
@@ -20,11 +21,12 @@ int main() {
   l.addCercle(C1);
   l.addCercle(C2);
   l.addCercle(C3);
-
   l.addRect(R1);
   l.addRect(R2);
-  
   std::cout << l.toString();
+
+  Forme f = Forme();
+  std::cout << f.toString() << std::endl;
 
   return 0;
 }
