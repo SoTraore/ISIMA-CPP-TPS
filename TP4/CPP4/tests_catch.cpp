@@ -12,7 +12,6 @@
 // -std=c++11 ou -std=c++0x sur les tres vieux compilateurs
 
 // Les tests ne sont pas exhaustifs, loin de là
-
 TEST_CASE("Instanciation", "[Point]") {
     Point p1;
     REQUIRE(p1.getX() == 0);
@@ -28,6 +27,7 @@ TEST_CASE("Instanciation", "[Point]") {
     REQUIRE(p2.getX() == 12);
     REQUIRE(p2.getY() ==  22);  // :-)
 }
+
 /*
 TEST_CASE("Origine", "[Point]") {
    REQUIRE(ORIGINE.getX() == 0);
@@ -55,7 +55,6 @@ TEST_CASE("Instanciation1", "[Forme]") {
 	REQUIRE(f1.getCouleur() ==  COULEURS::BLEU);
 }
 
-
 TEST_CASE("Instanciation2", "[Forme]") {
 	Forme f2;
 	
@@ -69,7 +68,6 @@ TEST_CASE("Instanciation2", "[Forme]") {
 	REQUIRE_FALSE (f2.getCouleur() == COULEURS::ROUGE);
 	REQUIRE_FALSE (f2.getCouleur() == COULEURS::JAUNE);
 }
-
 
 TEST_CASE("Instanciation3", "[Forme]") {
     // IL N'Y A PAS D'ERREUR DANS LE TEST, CELA DOIT MARCHER	
@@ -95,33 +93,3 @@ TEST_CASE("BoiteEnglobante", "[Forme]") {
 	REQUIRE (f.getHauteur() == 0);
 }
 
-/*
-TEST_CASE("Cercle", "[Cercle]") {
-   int compteur = Forme::prochainId();
-   Cercle c1;
-   Cercle c2(...); 
-   
-   REQUIRE(c1.toString() == ".....");
-   REQUIRE(c2.toString() == ".....");
-
-   c2.setRayon(...);
-   REQUIRE(c2.getRayon()   == "..."  );
-   REQUIRE(c2.toString()   == ".....");
-   REQUIRE(c2.getLargeur() == ".....");
-   REQUIRE(c2.getHauteur() == ".....");  
-
-   REQUIRE(Forme::prochainId() == (compteur+2) ); 
-}
-
-TEST_CASE("Polymorphisme", "[Forme]") {
-   Forme * f1 = new Cercle;
-   Forme * f2 = new Rectangle;
-
-   REQUIRE(f1->toString() == ".....");
-   REQUIRE(f2->toString() == ".....");
-
-   delete f1;
-   delete f2;
-}
-
-*/

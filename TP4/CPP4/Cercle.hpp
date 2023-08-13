@@ -13,6 +13,8 @@ class Cercle : public Forme {
     Cercle(int x, int y, int h, int w);
     Cercle(int rx, int ry, int rayon);
 
+    //int getRayon();
+
     std::ostream& toString(std::ostream& output); 
     std::string toString();
     std::string afficher();
