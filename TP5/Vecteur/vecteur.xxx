@@ -1,22 +1,4 @@
-#include <iostream>
-#include <cstring>
-
-template <class T, const int TAILLE=10>
-class Vecteur {
-
-  private:
-    T * tab;
-    int tete;
-    int capacite;
-
-  public:
-     Vecteur();
-     Vecteur(int capacite);
-     bool push_back(T elt);
-     int getCapacite();
-     int getSize();
-     void afficher();
-} ;
+#include "vecteur.hpp"
 
 // Template member function definitions need the template parameter
 template <typename T, const int TAILLE>
@@ -53,12 +35,4 @@ int Vecteur<T, TAILLE>::getCapacite() {
 template <typename T, const int TAILLE>
 int Vecteur<T, TAILLE>::getSize() {
     return tete + 1;
-}
-
-template <typename T, const int TAILLE>
-void Vecteur<T, TAILLE>::afficher() {
-  for (int i=0; i<Vecteur<T, TAILLE>::getSize(); i++) {
-    std::cout << this->tab[i] << " ";
-  }
-  std::cout << std::endl;
 }
