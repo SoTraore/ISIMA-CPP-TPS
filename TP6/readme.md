@@ -10,3 +10,4 @@ class is been called it will use first the specialized class method if it exist 
 ## Agregation relation
 An agregation occurs when an object is composed of other objects and it destruction doesn't entail the destructtion of its
 components.
+So the child / specialized class can exist without the parent class.
