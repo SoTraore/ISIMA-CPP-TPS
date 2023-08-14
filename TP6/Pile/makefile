@@ -1,16 +1,21 @@
-GG=g++
-CFLAGS=-c -Wall -Wextra
-LFLAGS=-g -o
-OBJ=Pile.o Main.o
+SRC=Pile.cpp tests_catch.cpp Main.cpp
+#SRC=$(wildcard *.cpp)  
+EXE=prog
 
-prog: $(OBJ)
-	$(GG) $(LFLAGS) prog $(OBJ)
+CXXFLAGS+=-Wall -Wextra -MMD -g -O2
+LDFLAGS= 
 
-Main.o: Main.cpp Pile.hpp
-	$(GG) $(CFLAGS) Main.cpp
+OBJ=$(addprefix build/,$(SRC:.cpp=.o))
+DEP=$(addprefix build/,$(SRC:.cpp=.d))
 
-Pile.o: Pile.cpp Pile.hpp
-	$(GG) $(CFLAGS) Pile.cpp
+all: $(OBJ)
+	$(CXX) -o $(EXE) $^ $(LDFLAGS)
+
+build/%.o: %.cpp
+	@mkdir -p build
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean:
-	rm -rf $(OBJ) prog
+	rm -rf build core *.gch
+
+-include $(DEP)

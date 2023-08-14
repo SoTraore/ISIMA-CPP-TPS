@@ -6,7 +6,7 @@ Pile::Pile()
 
 Pile::Pile(int taille)
 : tete(-1){
-  if (taille > TAILLE) {
+  if (taille < 1 || taille > TAILLE) {
     throw std::invalid_argument("Invalid argument") ; 
   }
   T = new int[taille];
