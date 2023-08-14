@@ -96,11 +96,8 @@ Chaine& Chaine::operator=(const Chaine& copy) {
 }
  
 const char& Chaine::operator[](int index) const{
-  if (index < 0) {
+  if ((index < 0) || (index > Chaine::getCapacite())) {
      throw Chaine::OutOfRangeException();
-  }
-  if (index > Chaine::getCapacite()){
-     throw std::bad_alloc();
   }
   return this->tab[index];
 }
