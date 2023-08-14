@@ -1,5 +1,6 @@
 ## How to compile the code
-g++ heritage.cpp -o prog -Wall -Wextra -g
+g++ heritage.cpp -o prog -Wall -Wextra -g 
+
 ./prog
 
 ## Main goal of this exercices
