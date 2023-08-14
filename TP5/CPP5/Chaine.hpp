@@ -16,7 +16,12 @@ class Chaine  {
     Chaine(const char* inCS);
     Chaine(int capacite);
     Chaine(const Chaine& copy);
+
+    const char& operator[](int index) const;
+    Chaine& operator+=(const Chaine& c);
     Chaine& operator=(const Chaine& copy); 
+    friend Chaine operator+(const Chaine& a, const Chaine& b);
+    friend ostream& operator<<(ostream& output, const Chaine& c);
 
     const char * c_str() const;
     int getCapacite() const;
