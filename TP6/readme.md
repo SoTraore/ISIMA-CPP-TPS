@@ -11,3 +11,11 @@ class is been called it will use first the specialized class method if it exist 
 An agregation occurs when an object is composed of other objects and it destruction doesn't entail the destructtion of its
 components.
 So the child / specialized class can exist without the parent class.
+
+## Terminating a program
+- return 0; // fin naturelle (par défaut)
+- std::exit()
+- std::terminate()
+- std::unexpected()(on ne devrait jamais l'appeler)
+
+
