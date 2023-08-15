@@ -1,4 +1,4 @@
-#include "PileGen.cpp"
+#include "PileGen.hpp"
 
 int main(){
   PileGen<int> v; 
@@ -12,7 +12,7 @@ int main(){
   v.pop();
   v.pop();
 
-  v.afficher();
+  //v.afficher();
 
   v.push(3);
   v.push(4);
@@ -25,7 +25,7 @@ int main(){
   v.push(6);
   v.push(7);
 
-  v.afficher();
+  //v.afficher();
 
   PileGen<double> d;
   d.push(11.12);
@@ -33,13 +33,11 @@ int main(){
   d.push(3.12);
   d.push(1.12);
 
-  d.afficher();
+  //d.afficher();
 
   PileGen<PileGen<int>> p; 
   p.push(v);
-  PileGen<int> elt = PileGen<int>(30);
-  elt = p.pop();
-  
+  PileGen<int> elt = p[p.top()]; 
   elt.afficher();
 
   return 0;
