@@ -40,7 +40,7 @@ int main(){
   PileGen<int> elt = PileGen<int>(30);
   elt = p.pop();
   
-  //elt.afficher();
+  elt.afficher();
 
   return 0;
 }
