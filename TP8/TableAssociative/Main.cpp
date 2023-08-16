@@ -1,11 +1,9 @@
-#include <iostream>
+#include "Fichier.hpp"
 #include <queue>
 #include <map>
 #include <vector>
 #include <iterator>
 #include <algorithm>
-
-using namespace std;
 
 const string& first(const pair<string,string>& p) { 
   return p.first; 
@@ -51,12 +49,23 @@ int main() {
   m["secours"]  = "42";
   mss::iterator it = m.find("loic");
   if (it==m.end()) cout << "et moi ?";
-  transform(m.begin(), m.end(), 
-		  ostream_iterator<string>(cout, "\n"), first);
-  transform(m.begin(), m.end(), 
-		  ostream_iterator<string>(cout, "\n"), second);
-  cout << toString(m);
-  myCopy(m.begin(), m.end(), cout << "\n");
+  //transform(m.begin(), m.end(), 
+  //		  ostream_iterator<string>(cout, "\n"), first);
+  //transform(m.begin(), m.end(), 
+  //		  ostream_iterator<string>(cout, "\n"), second);
+  //cout << toString(m);
+  //myCopy(m.begin(), m.end(), cout << "\n");
+  Fichier f = Fichier("output.txt");
+  string input ;
+
+  while (input != "end") {
+     cin >> input;
+     f.write(input);
+  }
+
+  cout << f.read();
+
+  return 0;
 }
 
 /*
