@@ -12,10 +12,24 @@ Cercle::Cercle(int x, int y, int h, int w)
 : x(x), y(y), h(h), w(w) {
   this->ordreC += 1;
 }
+
+Cercle::Cercle(const Cercle& c)
+: Forme(c) {
+  this->ordreC += 1; 
+}
+
+Cercle::Cercle(Cercle* c) 
+: Forme(*c) {
+  this->ordreC += 1; 
+}
     
 Cercle::Cercle(int rx, int ry, int rayon) 
 : x(rx-rayon), y(ry+rayon), h(2*rayon), w(2*rayon){
   this->ordreC += 1;
+}
+
+Cercle* Cercle::clone() const{
+  return new Cercle(*this) ;
 }
     
 std::ostream& Cercle::toString(std::ostream& output) { 

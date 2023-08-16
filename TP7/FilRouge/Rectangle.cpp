@@ -12,10 +12,20 @@ Rectangle::Rectangle(int x, int y, int h, int w)
   this->ordreR += 1;
 }
 
+Rectangle::Rectangle(const Rectangle& r) : Forme(r) {
+}
+
+Rectangle::Rectangle(Rectangle* r) : Forme(*r) {
+}
+
 std::ostream& Rectangle::toString(std::ostream& output) {
   output << "x: " << this->x << ", y: " << this->y << ", h: " << this->h
   	<< ", w: " << this->w << std::endl;	  
   return output;
+}
+
+Rectangle* Rectangle::clone() const{
+  return new Rectangle(*this);
 }
 
 std::string Rectangle::afficher() { 

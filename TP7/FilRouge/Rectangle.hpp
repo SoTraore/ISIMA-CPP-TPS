@@ -13,9 +13,12 @@ class Rectangle : public Forme {
   public :
     Rectangle();
     Rectangle(int x, int y, int h, int w);
-    
+    Rectangle(const Rectangle& r);
+    Rectangle(Rectangle* r);
     std::ostream& toString(std::ostream& output);
     std::string afficher();
+    Rectangle* clone() const;
+
 }; 
 
 #endif

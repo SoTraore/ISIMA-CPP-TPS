@@ -12,11 +12,13 @@ class Cercle : public Forme {
     Cercle() ;
     Cercle(int x, int y, int h, int w);
     Cercle(int rx, int ry, int rayon);
-
+    Cercle(const Cercle& c);
+    Cercle(Cercle* c);
     //int getRayon();
 
     std::ostream& toString(std::ostream& output); 
     std::string toString();
+    Cercle* clone() const;
     std::string afficher();
 } ;
 

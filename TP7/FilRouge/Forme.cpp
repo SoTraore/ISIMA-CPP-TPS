@@ -13,8 +13,23 @@ Forme::Forme(Point p, int w, int h)
 }
 
 Forme::Forme(Point p, COULEURS c)
-: p(p), c(c){
+: p(p), c(c) {
 }
+
+Forme::Forme(Forme* f) {
+  if (this != f) {
+    this->p.setX(f->getX());
+    this->p.setY(f->getY());
+    this->h = f->getHauteur();
+    this->w = f->getLargeur();
+  }
+}
+
+/*
+Forme* Forme::clone() const {
+  return new Forme(*this);
+}
+*/
 
 string Forme::toString() {
   string output = this->p.toString() + ", w: " + to_string(this->w) + ", h: " + to_string(this->h); 

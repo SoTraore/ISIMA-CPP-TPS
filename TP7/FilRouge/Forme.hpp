@@ -10,14 +10,16 @@ enum class COULEURS {
 };
 
 class Forme {
-  Point p;
-  int w, h;
-  COULEURS c;
-  static int id;
+  private:
+    Point p;
+    int w, h;
+    COULEURS c;
+    static int id;
   public:
     Forme();
     Forme(Point p, int w, int h);
     Forme(Point p, COULEURS c);
+    Forme(Forme* f);
     Point getPoint();
     void setPoint(Point p);
     int getX();
@@ -25,6 +27,7 @@ class Forme {
     int getId();
     int getLargeur();
     int getHauteur();
+    virtual Forme* clone() const = 0;
     void setLargeur(int x);
     void setHauteur(int y);
     void setX(int x);
@@ -33,7 +36,6 @@ class Forme {
     void setCouleur(COULEURS c);
     static int prochainId();
     string toString();
-
 };
 
 #endif
