@@ -21,6 +21,9 @@ class ZZ {
 	return (a.note < b.note);
     }
 
+    int size() const;
+    void clear();
+
     string toString();
 };
 
