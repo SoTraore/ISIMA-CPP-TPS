@@ -14,9 +14,9 @@ class Fichier {
     Fichier(string name);
 
     void write(string input);
-    string read() ;
-
-    string toString();
+    string read() const;
+    string toString() const;
+    int clear();
 };
 
 #endif

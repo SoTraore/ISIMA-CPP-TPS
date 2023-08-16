@@ -35,6 +35,19 @@ ostream& myCopy(begin b, end e, ostream& output) {
   return output;
 }
 
+void annuaireW(Fichier f, map<string, string> m) {
+  for (auto& elt : m) {
+    string input = afficher(elt);
+    f.write(input); 
+  }
+}
+
+string annuaireRead(Fichier f) {
+  string output;
+  output = f.toString();
+  return output;
+}
+
 int main() {
   using namespace std;
 
@@ -56,33 +69,22 @@ int main() {
   //cout << toString(m);
   //myCopy(m.begin(), m.end(), cout << "\n");
   Fichier f = Fichier("output.txt");
-  string input ;
+  string nom, numero ;
+  int number = 0;
+  do {
+     cout << "How many elements do you want to add : " ;
+     cin >> number;
+     for (int i=0; i<number; i++) {
+       cout << "Nom : " ;
+       cin >> nom;
+       cout << "Numéro : ";
+       cin >> numero;
+       f.write(nom + " " + numero);
+     }
+  } while (number != 0);
 
-  while (input != "end") {
-     cin >> input;
-     f.write(input);
-  }
-
+  cout << "-------------END---------------" << endl;
   cout << f.read();
 
   return 0;
 }
-
-/*
-int main(int, char**) {
-  map<string, string> liste;
-
-  map<string, string>::const_iterator it 
-      = liste.begin();
-  while(it!=liste.end()) {  
-    cout << it->first  << " " 
-         << it->second << endl;
-    ++it;
-  }
-
-  transform(liste.begin(), liste.end(), 
-   ostream_iterator<string>(cout, " "), first);
-  
-  return 0;
-}
-*/
