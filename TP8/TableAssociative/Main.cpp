@@ -42,12 +42,6 @@ void annuaireW(Fichier f, map<string, string> m) {
   }
 }
 
-string annuaireRead(Fichier f) {
-  string output;
-  output = f.toString();
-  return output;
-}
-
 int main() {
   using namespace std;
 
@@ -62,12 +56,14 @@ int main() {
   m["secours"]  = "42";
   mss::iterator it = m.find("loic");
   if (it==m.end()) cout << "et moi ?";
+
   //transform(m.begin(), m.end(), 
   //		  ostream_iterator<string>(cout, "\n"), first);
   //transform(m.begin(), m.end(), 
   //		  ostream_iterator<string>(cout, "\n"), second);
   //cout << toString(m);
   //myCopy(m.begin(), m.end(), cout << "\n");
+  //
   Fichier f = Fichier("output.txt");
   string nom, numero ;
   int number = 0;
@@ -84,6 +80,7 @@ int main() {
   } while (number != 0);
 
   cout << "-------------END---------------" << endl;
+
   cout << f.read();
 
   return 0;
