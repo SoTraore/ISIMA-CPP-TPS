@@ -7,20 +7,20 @@
 // c'est comme en C et le pragma once c'est nul
 class Point {
    // par défaut, tout est privé dans une "class"  
-   int x, y;
+   double x, y;
    static int compteur;
 
  public:
    Point();
-   Point(int x, int y);
-   int getX();
-   int getY(); 
+   Point(double x, double y);
+   double getX();
+   double getY(); 
    int getCompteur();
    std::ostream& afficher(std::ostream& output);
-   void deplacerDe();
-   void deplacerVers();
-   void setX(int x);
-   void setY(int y);
+   void deplacerDe(double x, double y);
+   void deplacerVers(double x, double y);
+   void setX(double x);
+   void setY(double y);
 };
 
 #endif

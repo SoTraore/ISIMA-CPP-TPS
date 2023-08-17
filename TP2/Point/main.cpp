@@ -14,7 +14,11 @@ int main() {
 	B.afficher(std::cout); 
 	C->afficher(std::cout);
 	D->afficher(std::cout);
+	D->deplacerVers(4.5, 6.5);
+	D->afficher(std::cout);
+	D->deplacerDe(-0.5, -1.5);
 
+	D->afficher(std::cout);
 	std::cout << "A.compteur : " << A.getCompteur() << std::endl;
 
 	return 0;
