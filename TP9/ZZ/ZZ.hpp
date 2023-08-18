@@ -31,6 +31,9 @@ class ZZ {
        }
     };
 
+    string getNom() const;
+    string getPrenom() const;
+
     int size() const;
     void clear();
 

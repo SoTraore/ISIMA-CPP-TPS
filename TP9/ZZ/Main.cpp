@@ -21,6 +21,65 @@ class ZZL {
     int getSize() const { return top+1; }
     ZZ getTop() const { return zzl[top]; } 
 
+    //Lexicographique ordered push
+
+    void add(const ZZ& elt) {
+    top += 1;
+    string value = elt.getNom() + elt.getPrenom();
+
+    if (top >= size) {
+        size *= 2;
+        ZZ *copy = new ZZ[size];
+        
+        int insertIndex = -1; // Initialize to an invalid index
+
+        for (int i = 0, j = 0; i < top; i++) {
+            string nomprenom = zzl[i].getNom() + zzl[i].getPrenom();
+            
+            if (insertIndex == -1 && value < nomprenom) {
+                insertIndex = j;
+                copy[j] = elt;
+                j++;
+            }
+            
+            copy[j] = zzl[i];
+            j++;
+        }
+
+        // If value is still not inserted, add it to the end
+        if (insertIndex == -1) {
+            copy[top] = elt;
+        }
+
+        delete[] zzl;
+        zzl = copy;
+    } else {
+        int insertIndex = -1; // Initialize to an invalid index
+        
+        for (int i = 0, j = 0; i < top; i++) {
+            string nomprenom = zzl[i].getNom() + zzl[i].getPrenom();
+            
+            if (insertIndex == -1 && value < nomprenom) {
+                insertIndex = j;
+                break;
+            }
+            
+            j++;
+        }
+        
+        if (insertIndex == -1) {
+            insertIndex = top;
+        }
+        
+        // Shift elements to make space for the new element
+        for (int i = top; i > insertIndex; i--) {
+            zzl[i] = zzl[i - 1];
+        }
+        
+        zzl[insertIndex] = elt;
+    }
+    }
+
     void push(const ZZ& elt) {
        top += 1;
        if (top > size) {
@@ -81,10 +140,15 @@ int main() {
   priority_queue<ZZ> tri;
   priority_queue<ZZ, vector<ZZ>, ZZ::cmpZZ> tri_funct;
 
+  //Now let use of implemented lexicographic push
+
+  ZZL zzl;
+
   for(vzz::iterator it = zz.begin(); 
       it!=zz.end(); ++it) {
     tri.push(*it);
     tri_funct.push(*it);
+    zzl.add(*it);
   }
 
   while(!tri.empty()) {
@@ -98,6 +162,13 @@ int main() {
     cout << tri_funct.top() << " " << endl;
     tri_funct.pop();
   }
+
+  cout << endl;
+  cout << "Ordre lexicographique par défaut" << endl << zzl;
+
  
   return 0;
 }
+
+
+

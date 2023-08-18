@@ -21,6 +21,14 @@ bool ZZ::operator<(const ZZ& a,  const ZZ& b) {
 }
 */
 
+string ZZ::getNom() const  {
+  return this->nom;
+}
+
+string ZZ::getPrenom() const {
+  return this->prenom; 
+}
+
 string ZZ::toString() {
   string result;
   result = "Nom : " +nom+ ", Prénom : " +prenom+ ", Note : " +to_string(note);
