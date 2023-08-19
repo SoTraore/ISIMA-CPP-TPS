@@ -30,8 +30,8 @@ class Stats {
 
    void display(ostream& o = cout) const {
        o << "Table : ";
-       for (auto entry : data) {
-          o << entry << " ";
+       for (vector<int>::const_iterator it=data.begin(); it!=data.end(); it++) {
+          o << *it << " ";
        }
        o << endl;
        o << "Sum : " << sum << ", Moy : " << moy 
