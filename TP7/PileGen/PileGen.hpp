@@ -31,6 +31,7 @@ class PileGen {
      bool push(T elt);
      void pop(); 
      int top();
+     bool isEmpty() const;
      int getCapacite() const;
      int getSize() const;
      void afficher() const;
@@ -114,6 +115,11 @@ int PileGen<T, TAILLE>::getCapacite() const{
 template <typename T, const int TAILLE>
 int PileGen<T, TAILLE>::getSize() const{
     return tete + 1;
+}
+
+template <typename T, const int TAILLE>
+bool PileGen<T, TAILLE>::isEmpty() const{
+    return (tete == -1);
 }
 
 template <typename T, const int TAILLE>
