@@ -4,7 +4,7 @@
 Cartesien::Cartesien(): Point(), z(0) {}
 
 Cartesien::Cartesien(Polaire& p) {
-    this->convertir(p);
+    p.convertir(*this);
 }
 
 Cartesien::Cartesien(double x, double y)
@@ -18,11 +18,11 @@ void Cartesien::afficher(ostream& out) const {
 }
 
 void Cartesien::convertir(Cartesien& p) const {
-    p.setX((double)(getDistance() * cos(getAngle() * M_PI / 180)));
-    p.setY((double)(getDistance() * sin(getAngle() * M_PI / 180)));
+    p.setX(getX());
+    p.setY(getY());
 }
 
 void Cartesien::convertir(Polaire& p) const {
-    p.setX((double)(getY() * cos(getX() * M_PI / 180)));
-    p.setY((double)(getY() * sin(getX() * M_PI / 180)));
+    p.setX((double)(atan2(getY(), getX()) * 180 / M_PI));
+    p.setY((double)(hypot(getX(), getY())));
 }

@@ -3,27 +3,29 @@
 
 Polaire::Polaire() : Point() {}
 
-Polaire::Polaire(Cartesien& c) {
-    this->convertir(c);
+Polaire::Polaire(const Cartesien& c) {
+    c.convertir(*this);
 }
 
-Polaire::Polaire(int r, int o)
-: Point(r, o){}
+Polaire::Polaire(double r, double o) {
+    setX(r);
+    setY(o);
+}
 
 double Polaire::getAngle() const {
-    return getY();
-}
-
-double Polaire::getDistance() const {
     return getX();
 }
 
+double Polaire::getDistance() const {
+    return getY();
+}
+
 void Polaire::setAngle(double y) {
-    setY(y);
+    setX(y);
 }
 
 void Polaire::setDistance(double x) {
-    setX(x);
+    setY(x);
 }
 
 void Polaire::afficher(ostream& out) const {

@@ -17,6 +17,8 @@ public:
     Point() ;
     Point(double x, double y);
 
+    // virtual ~Point();
+
     void setX(double x);
     void setY(double y);
 

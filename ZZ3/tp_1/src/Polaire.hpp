@@ -9,8 +9,9 @@ class Cartesien;
 class Polaire : public Point {
 public:
     Polaire();
-    Polaire(Cartesien& c);
-    Polaire(int r, int o);
+    // ~Polaire() {}
+    Polaire(const Cartesien& c);
+    Polaire(double r, double o);
 
 
     double getAngle() const;

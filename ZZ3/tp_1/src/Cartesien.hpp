@@ -10,6 +10,7 @@ class Cartesien : public Point {
 double z;
 public:
     Cartesien();
+    // ~Cartesien() {};
     Cartesien(Polaire& p);
     Cartesien(double x, double y);
     Cartesien(double x, double y, double z);
