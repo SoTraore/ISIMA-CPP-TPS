@@ -173,6 +173,10 @@ CMakeFiles/tp2_nuage.dir/src/Cartesien.cpp.o: \
  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
  /usr/include/c++/12/tr1/poly_hermite.tcc \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
- /usr/include/c++/12/tr1/riemann_zeta.tcc \
+ /usr/include/c++/12/tr1/riemann_zeta.tcc /usr/include/c++/12/vector \
+ /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/bits/stl_vector.h \
+ /usr/include/c++/12/bits/stl_bvector.h \
+ /usr/include/c++/12/bits/vector.tcc \
  /home/local.isima.fr/sotraore3/shared/CPP/ISIMA-CPP-TPS/ZZ3/tp_2/src/Polaire.hpp \
  /home/local.isima.fr/sotraore3/shared/CPP/ISIMA-CPP-TPS/ZZ3/tp_2/src/Point.hpp
